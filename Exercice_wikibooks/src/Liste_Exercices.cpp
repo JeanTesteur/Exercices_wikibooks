@@ -1,8 +1,9 @@
 #include "Liste_Exercices.h"
 #include <iostream>
+#include "math.h"
 using namespace std;
 
-const int Liste_Exercices::NOMBRE_EXO = 3;
+const int Liste_Exercices::NOMBRE_EXO = 5;
 
 Liste_Exercices::Liste_Exercices()
 {
@@ -37,11 +38,25 @@ void Liste_Exercices::executer_Exo(int n_exo)
         cout << "C'est fini pour l'exercice 3" << endl;
         break;
 
+    case 4 :
+        exercice_4();
+        cout << endl;
+        cout << "C'est fini pour l'exercice 4" << endl;
+        break;
+
+    case 5 :
+        exercice_5();
+        cout << endl;
+        cout << "C'est fini pour l'exercice 5" << endl;
+        break;
+
     default :
         cout << "Le numero n'est pas valide" << endl;
     }
 }
-
+/*
+Le code des exos ci-dessous
+*/
 void Liste_Exercices::exercice_1() //utilisation de base de cout et endl
 {
     cout << "Hello word" << endl;
@@ -144,4 +159,93 @@ void Liste_Exercices::exercice_3()//Calcule la moyenne de n entiers
 
 
     }
+}
+
+void Liste_Exercices::exercice_4()//echange de contenu entre deux variables
+{
+    cout << "Programme qui echange la valeur de deux variables. Le type double a ete choisi arbitrairement." << endl;
+    cout << endl;
+
+    double A;
+    cout << "Nombre A : " << endl;
+    cin >> A;
+    cout << endl;
+
+    double B;
+    cout << "Nombre B : " << endl;
+    cin >> B;
+    cout << endl;
+
+    cout << "A vaut " << A << " et B vaut " << B << "." << endl;
+    cout << endl;
+    cout << "Abracadabra." << endl;
+    cout << endl;
+
+    double aux = A;
+    A=B;
+    B=aux;
+    cout << "A vaut " << A << " et B vaut " << B << "." << endl;
+}
+
+double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FOR(double a,double b,double u_0, int n)
+{
+    double u_courrant = u_0;
+
+    for (int i = 0; i<n; i++)
+    {
+        double aux = u_courrant;
+        u_courrant *= a;
+        u_courrant += b;
+    }
+    return u_courrant;
+}
+
+double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(double a,double b,double u_0, int n)
+{
+    if (a==1)
+    {
+        return u_0 + n*b;
+    }
+    else
+    {
+        return pow(a,n)*(u_0 - b/(1-a)) + b/(1-a);
+    }
+
+}
+
+void Liste_Exercices::exercice_5()//calcul du n_ème terme d'une suite arithmetico-geometrique
+{
+    cout << "Programme qui calcul le n_eme terme d'une suite arithmetico-geometrique reelle u." << endl;
+    cout << "C'est a dire que u est est definie par u_0 sa valeur initiale, et la relation u_(n+1) = a.u_n + b" << endl;
+    cout << endl;
+
+    double u_0;
+    double a;
+    double b;
+    int n;
+
+    cout << "Donnez une valeur pour u_0 : " << endl;
+    cin >> u_0;
+    cout << endl;
+    cout << "Donnez une valeur pour a : " << endl;
+    cin >> a;
+    cout << endl;
+    cout << "Donnez une valeur pour b : " << endl;
+    cin >> b;
+    cout << endl;
+    cout << "Indiquez la valeur de n pour laquelle vous souhaitez calculer u_n :" << endl;
+    cin >> n;
+
+
+    cout << "Nous calculons u_n par 3 methodes differentes, pour s'entrainer." << endl;
+    cout << endl;
+    cout << "Methode 1 : Calcul iteratif a partir de la relation de recurrence :" << endl;
+    cout << "u_n vaut : " << Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FOR(a,b,u_0,n) << endl;
+    cout << endl;
+    cout << "Methode 2 : Calcul direct :" << endl;
+    cout << "u_n vaut : " << Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(a,b,u_0,n) << endl;
+    cout << endl;
+
+
+
 }
