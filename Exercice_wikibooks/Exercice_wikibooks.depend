@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1529701662 source:c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\main.cpp
+	<iostream>
+	"Liste_Exercices.h"
+
+1529705964 c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\include\liste_exercices.h
+
+1529709246 source:c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\src\liste_exercices.cpp
+	"Liste_Exercices.h"
+	<iostream>
+
