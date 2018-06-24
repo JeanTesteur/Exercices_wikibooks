@@ -1,9 +1,12 @@
 #include "Liste_Exercices.h"
 #include <iostream>
 #include "math.h"
+#include "listeTriTabl.h"
+#include <cstring>
+
 using namespace std;
 
-const int Liste_Exercices::NOMBRE_EXO = 5;
+const int Liste_Exercices::NOMBRE_EXO = 7;
 
 Liste_Exercices::Liste_Exercices()
 {
@@ -50,8 +53,21 @@ void Liste_Exercices::executer_Exo(int n_exo)
         cout << "C'est fini pour l'exercice 5" << endl;
         break;
 
+    case 6 :
+        exercice_6();
+        cout << endl;
+        cout << "C'est fini pour l'exercice 6" << endl;
+        break;
+
+    case 7 :
+        exercice_7();
+        cout << endl;
+        cout << "C'est fini pour l'exercice 7" << endl;
+        break;
+
     default :
         cout << "Le numero n'est pas valide" << endl;
+        break;
     }
 }
 /*
@@ -187,7 +203,7 @@ void Liste_Exercices::exercice_4()//echange de contenu entre deux variables
     cout << "A vaut " << A << " et B vaut " << B << "." << endl;
 }
 
-double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FOR(double a,double b,double u_0, int n)
+double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FOR(double a,double b,double u_0, int n)//calcul iteratif
 {
     double u_courrant = u_0;
 
@@ -200,7 +216,7 @@ double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FOR(double a,double b,doubl
     return u_courrant;
 }
 
-double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(double a,double b,double u_0, int n)
+double Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(double a,double b,double u_0, int n)//calcul direct
 {
     if (a==1)
     {
@@ -245,7 +261,90 @@ void Liste_Exercices::exercice_5()//calcul du n_ème terme d'une suite arithmetic
     cout << "Methode 2 : Calcul direct :" << endl;
     cout << "u_n vaut : " << Liste_Exercices::calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(a,b,u_0,n) << endl;
     cout << endl;
+}
 
+void Liste_Exercices::exercice_6()//tri d'un tableau
+{
+    cout << "Programme qui trie votre tableau" << endl;
+    cout << endl;
+    cout << "Indiquez le nombre d'elements de votre tableau ?" << endl;
 
+    int taille;
+    cin >> taille;
+    int tableau [taille];
+    cout << endl;
+    for (int i=0; i<taille; i++) //demande les valeurs du tableau
+    {
+        cout << "Valeur " << i+1 << " :" << endl;
+        cin >> tableau[i];
+        cout << endl;
+    }
 
+    cout << "Votre tableau est :" << endl;
+    for (int i=0; i<taille; i++)
+    {
+        cout << tableau[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Choisissez votre mode de tri :" << endl;
+    cout << "0 : Insertion" << endl;
+    cout << "1 : Selection" << endl;
+    int mode;
+    cin >> mode;
+    cout << endl;
+
+    switch (mode) //choix du mode de tri
+    {
+    case 0 :
+        triParInsertion(tableau,taille);
+        cout << "Le tri par insertion donne :" << endl;
+        break;
+
+    case 1 :
+        triParSelection(tableau,taille);
+        cout << "Le tri par insertion donne :" << endl;
+        break;
+
+    default :
+        cout << "Erreur de touche. Mais je vous trie quand meme votre tableau :" << endl;
+        break;
+    }
+    for (int i=0; i<taille; i++)
+    {
+        cout << tableau[i] << " ";
+    }
+    cout << endl;
+}
+
+void Liste_Exercices::exercice_7()//teste si un mot est un palyndrome
+{
+    cout << "Programme qui teste si votre mot est un palyndrome." << endl;
+    cout << endl;
+    cout << "Donnez votre mot :" << endl;
+    char t[100];
+    cin >> t;
+    cout << endl;
+
+    int i = 0;
+    int j = strlen(t)-1;
+    bool palyndrome = true;
+    while (palyndrome && i<j)
+    {
+        if(t[i]!=t[j])
+        {
+            palyndrome = false;
+        }
+        i++;
+        j--;
+    }
+
+    if (palyndrome)
+    {
+        cout << "Le mot " << t << " est un palyndrome." << endl;
+    }
+    else
+    {
+        cout << "Le mot " << t << " n'est pas un palyndrome." << endl;
+    }
 }
