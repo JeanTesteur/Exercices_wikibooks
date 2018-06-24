@@ -34,6 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../../../TestTabl/Test Tabl/Test_Tableaux/listeTriTabl.cpp" />
+		<Unit filename="../../../TestTabl/Test Tabl/Test_Tableaux/listeTriTabl.h" />
 		<Unit filename="include/Liste_Exercices.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Liste_Exercices.cpp" />

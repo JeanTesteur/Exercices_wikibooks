@@ -14,6 +14,8 @@ class Liste_Exercices
         static void exercice_3();//calcul de moyenne
         static void exercice_4();//echange de contenu entre deux variables
         static void exercice_5();//calcul du n_ème terme d'une suite arithmetico-geometrique
+        static void exercice_6();//tri d'un tableau
+        static void exercice_7();//teste si mot est palyndrome
         static double calcul_suite_RLO1_AnnexeExo5_FOR(double a,double b,double u_0, int n);
         static double calcul_suite_RLO1_AnnexeExo5_FormuleDirecte(double a,double b,double u_0, int n);
     protected:

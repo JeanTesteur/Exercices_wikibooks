@@ -3,9 +3,14 @@
 	<iostream>
 	"Liste_Exercices.h"
 
-1529772651 c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\include\liste_exercices.h
+1529857014 c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\include\liste_exercices.h
 
 1529709246 source:c:\users\guillaume\desktop\stage lux c++\test_perso\test_wikibooks\exercice_wikibooks\src\liste_exercices.cpp
 	"Liste_Exercices.h"
 	<iostream>
+
+1529243697 source:c:\users\guillaume\desktop\stage lux c++\testtabl\test tabl\test_tableaux\listetritabl.cpp
+	"listeTriTabl.h"
+
+1529243700 c:\users\guillaume\desktop\stage lux c++\testtabl\test tabl\test_tableaux\listetritabl.h
 
